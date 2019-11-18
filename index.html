@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Расчет стоимости тура</title>
+	<link rel="stylesheet" href="style/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<script src="js/script.js"></script>
+</head>
+<body>
+
+	<header> 
+		<div class="header-wrap">
+			<h1>Расчёт стоимости тура от компании "Летаем - отдыхаем"</h1>
+		</div> 
+	</header>
+	<main>
+		
+		<div class="form-wrap">
+			<div class="form">
+				<div class="person">
+					<h4>Сколько человек полетит отдыхать?</h4>
+					<input id="chel" type="number" min="1" max="8" list="num" value="1">
+			
+				</div>
+				<div class="days">
+					<h4>На сколько дней?</h4>
+					<input id="day" type="range" step="1" min="1" max="14" list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
+						<datalist id="rangeList">
+							<option value="1000" label="1">
+							<option value="2000" label="2">
+							<option value="3000" label="3">
+							<option value="4000" label="4">
+							<option value="5000" label="5">
+							<option value="6000" label="6">
+							<option value="7000" label="7">
+							<option value="8000" label="8">
+							<option value="9000" label="9">
+							<option value="10000" label="10">
+							<option value="11000" label="11">
+							<option value="12000" label="12">
+							<option value="13000" label="13">
+							<option value="14000" label="14">
+						</datalist>
+					<span id="rangeValue">8</span>
+				</div>
+				<div class="eat">
+					<h4>Питание</h4>
+					<label><input type="radio" name="food" id="f1" value="1" checked> Только завтраки </label><br>
+    				<label><input type="radio" name="food" id="f2" value="1.5"> Всё включено </label>
+				</div>
+				<div class="beach">
+					<h4>Пляж</h4>
+					<div class="beach-wrap">
+						<label> <input type="checkbox" id="b1" value="1.2"> Песок</label>
+						<label> <input type="checkbox" id="b2" value="1.2"> Перва береговая линия</label>
+						<label> <input type="checkbox" id="b3" value="1.2"> Частный пляж отеля</label>
+					</div>
+				</div>
+				<div class="stars">
+					<h4>Отель - количество звезд</h4>
+					<label> <input type="radio" name="star" id="s1" value="1">&#9734; </label>
+					<label> <input type="radio" name="star" id="s2" value="1.2">&#9734; &#9734; </label>
+					<label> <input type="radio" name="star" id="s3" value="1.4">&#9734; &#9734; &#9734;  </label>
+					<label> <input type="radio" name="star" id="s4" value="1.6" checked>&#9734; &#9734; &#9734; &#9734; </label>
+					<label> <input type="radio" name="star" id="s5" value="1.8">&#9734; &#9734; &#9734; &#9734; &#9734; </label>
+				</div>
+			</div>
+
+			<button onclick="raschitat()">Рассчитать стоимость</button>
+
+			<div class="answer">
+				<div id="stoimost"></div>
+			</div>
+		</div>
+
+	</main>
+	<footer></footer>
+</body>
+</html>
